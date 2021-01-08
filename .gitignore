@@ -3,6 +3,9 @@
 #Creds
 /config
 
+#cache
+.eslintcache
+
 # dependencies
 /node_modules
 /.pnp
