@@ -1,9 +1,7 @@
 import React from 'react';
 
 export default function App() {
-  return (
-    <h1>can_release</h1>
-  );
+    return (
+      <h1>can_release</h1>
+    )
 }
-
-
