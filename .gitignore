@@ -3,7 +3,7 @@
 .eslintcache
 
 #Creds
-/config
+/config/config.js
 
 #cache
 .eslintcache
