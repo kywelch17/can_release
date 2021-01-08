@@ -1,0 +1,46 @@
+body {
+    margin: 40px;
+    background-color: cadetblue;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    background-color: bisque;
+}
+
+.header .title {
+    color: coral;
+    font-size: 25px;
+    justify-content: center;
+    align-content: center;
+    font-style: bold;
+    padding-left: 30px;
+}
+
+.header .temp1 {
+    background-color:coral;
+}
+
+.header .temp2 {
+    background-color: coral;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 15px;
+    margin: 25px;
+    margin-top: 10px;
+    background-color: slateblue;
+}
+    
+.content .beerList{
+    background-color: skyblue;
+}
+
+.content .events{
+    background-color: cyan;
+    padding-left: 5%;
+    margin-left: 5%;
+}
