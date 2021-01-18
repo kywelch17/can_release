@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import firebase from 'firebase';
 import { useHistory } from 'react-router-dom';
 
 import { database } from '../lib/firebase';
-import { registerError } from '../helper/error';
+import * as ROUTES from '../constants/routes';
 import Form from '../components/form/index';
 
 const Register = () => {
@@ -12,10 +12,29 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState([]);
 
+    const history = useHistory();
+
     const handleRegister = async (e) => {
         e.preventDefault();
 
-       
+        try {
+            let user = {
+                name: name,
+                email: email,
+                password: password
+            };
+            let ref = database.collection('users');
+            let userRef = ref.doc(name.replace(/\s/g, ''));
+            await userRef.set({
+                user,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+            });
+            history.push(ROUTES.LANDING);
+        }
+        catch(error) {
+            console.error(error);
+        }
     }
 
     return (
@@ -28,7 +47,7 @@ const Register = () => {
                     <Form.Input
                         type='text'
                         value={name}
-                        onChange={({ target }) => setEmail(target.value)}
+                        onChange={({ target }) => setName(target.value)}
                         id='name'
                         placeholder="Bruce Wayne"
                     />
