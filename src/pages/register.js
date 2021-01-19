@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import firebase from 'firebase';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import { database } from '../lib/firebase';
 import * as ROUTES from '../constants/routes';
@@ -72,6 +72,15 @@ const Register = () => {
                         type='submit'
                         onClick={handleRegister}
                     >Submit</Form.Submit>
+                    <Form.AltText>Register with:</Form.AltText>
+                    <Form.Alt>
+                        <a href='https://facebook.com'>
+                            <Form.AltIcon id='facebook' />
+                        </a>
+                        <a href='https://google.com'>
+                            <Form.AltIcon id='google' />
+                        </a>
+                    </Form.Alt>
                 </Form.Base>
             </Form>
         </>

@@ -56,7 +56,7 @@ export const Input = styled.input`
 export const Submit = styled.button`
     width: 50%;
     height: 50%;
-    margin-top: 36px;
+    margin-top: 24px;
     border-radius: 12px;
     outline: none;
     border: 0;
@@ -99,4 +99,25 @@ export const Error = styled.ul`
     list-style: none;
     padding: 0 15px;
     font-size: 12px;
+`;
+
+export const Alt = styled.div`
+    font-size: 24px;
+    justify-content: center;
+`;
+
+export const AltText = styled.div`
+    font-size: 18px;    
+    margin: 18px;
+`;
+
+export const AltIcon = styled.i`
+    margin: 12px 8px;
+    font-size: 36px;
+    color: #fff;
+
+    &:hover {
+        color: #aa9;
+        cursor: pointer;
+    }
 `;

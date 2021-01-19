@@ -1,7 +1,7 @@
 import React from 'react';
-import { BsPersonFill, BsFillEnvelopeFill, BsFillLockFill} from 'react-icons/bs';
+import { FaGoogle, FaFacebook } from 'react-icons/fa';
 
-import { Container, Base, Title, Label, Input, Submit, SubmitText, Switch, Link, Error } from './styles/form';
+import { Container, Base, Title, Label, Input, Submit, SubmitText, Switch, Link, Error, Alt, AltText, AltIcon } from './styles/form';
 
 export default function Form ({ children, ...restProps }) {
     return <Container {...restProps}>{ children }</Container>;
@@ -46,4 +46,21 @@ Form.Submit = function FormSubmit ({ children, ...restProps }) {
 
 Form.Error = function FormError ({ children, ...restProps }) {
     return <Error {...restProps}>{ children }</Error>;
+}
+
+Form.Alt = function FormAlt ({ children, ...restProps }) {
+    return <Alt {...restProps}>{ children }</Alt>;
+}
+
+Form.AltText = function FormAltText ({ children, ...restProps }) {
+    return <AltText {...restProps}>{ children }</AltText>;
+}
+
+Form.AltIcon = function FormAltIcon ({ children, ...restProps }) {
+    return (
+        <>
+            {restProps.id === 'facebook' && <AltIcon><FaFacebook /></AltIcon>}
+            {restProps.id === 'google' && <AltIcon><FaGoogle /></AltIcon>}
+        </>
+    );
 }

@@ -52,6 +52,15 @@ const Login = () => {
                         type='submit'
                         onClick={handleLogin}
                     >Submit</Form.Submit>
+                    <Form.AltText>Login with:</Form.AltText>
+                    <Form.Alt>
+                        <a href='https://facebook.com'>
+                            <Form.AltIcon id='facebook' />
+                        </a>
+                        <a href='https://google.com'>
+                            <Form.AltIcon id='google' />
+                        </a>
+                    </Form.Alt>
                 </Form.Base>
             </Form>
         </>
