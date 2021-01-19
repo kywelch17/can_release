@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, TitleLink, TitleLinkText, Items, Search, Input, Submit } from './style/header';
+import { Container, Dropdown, TitleLink, TitleLinkText, Items, Search, Input, Submit, Buttons, buttonArea } from './style/header';
 
 export default function Header({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>;
@@ -34,5 +34,43 @@ Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...restProps 
                 Search
             </Submit>
         </Search>
+    )
+}
+
+Header.Login = function HeaderLogin({ childern, ...restProps}){
+    return (
+        <buttonArea>
+            <Buttons {...restProps}>
+                Login
+            </Buttons>
+            <Buttons {...restProps}>
+                Register
+            </Buttons>
+            <Buttons {...restProps}>
+                Logout
+            </Buttons>
+        </buttonArea>
+    )
+}
+
+Header.Register = function HeaderRegister({ childern, ...restProps}){
+    return (
+        <Buttons {...restProps}>
+            Register
+        </Buttons>
+    )
+}
+
+Header.Logout = function HeaderLogout({ childern, ...restProps}){
+    return (
+        <Buttons {...restProps}>
+            Logout
+        </Buttons>
+    )
+}
+
+Header.Dropdown = function HeaderDropdown({ childern, ...restProps}){
+    return (
+        <Dropdown>Dropdown Button Here</Dropdown>
     )
 }
