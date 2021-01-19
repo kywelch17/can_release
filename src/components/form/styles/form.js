@@ -59,13 +59,11 @@ export const Submit = styled.button`
     margin-top: 24px;
     border-radius: 12px;
     outline: none;
-    border: 0;
+    border: none;
     padding: 6px;
 
     &:hover {
-        color: #fff;
-        background-color: #000;
-        border: 1px solid #fff;
+        background-color: #aa9;
         cursor: pointer;
     }
 `;
