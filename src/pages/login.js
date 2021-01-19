@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { HeaderContainer } from '../container/header';
+import { FooterContainer } from '../container/footer';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 
-import { database } from '../lib/firebase';
+import { database } from '../config/firebase';
 import Form from '../components/form';
 
 const Login = () => {
@@ -27,6 +29,7 @@ const Login = () => {
 
     return (
         <>
+            <HeaderContainer />
             <Form>
                 <Form.Base method='POST'>
                     <Form.Title>Login</Form.Title>
@@ -63,6 +66,7 @@ const Login = () => {
                     </Form.Alt>
                 </Form.Base>
             </Form>
+            <FooterContainer/>
         </>
     )
 }

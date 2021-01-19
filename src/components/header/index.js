@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Container, Dropdown, TitleLink, TitleLinkText, Items, Search, Input, Submit, Buttons, buttonArea } from './style/header';
+import { Container, Dropdown, TitleLink, TitleLinkText, Items, Search, Input, Submit, Buttons, buttonArea } from './styles/header';
+import { useHistory } from 'react-router-dom';
 
 export default function Header({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>;
@@ -38,12 +39,14 @@ Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...restProps 
 }
 
 Header.Login = function HeaderLogin({ childern, ...restProps}){
+    let history = useHistory();
+
     return (
         <buttonArea>
-            <Buttons {...restProps}>
+            <Buttons {...restProps} onClick={() => history.push('/login')}>
                 Login
             </Buttons>
-            <Buttons {...restProps}>
+            <Buttons {...restProps} onClick={() => history.push('/register')}>
                 Register
             </Buttons>
             <Buttons {...restProps}>
@@ -53,6 +56,7 @@ Header.Login = function HeaderLogin({ childern, ...restProps}){
     )
 }
 
+/*
 Header.Register = function HeaderRegister({ childern, ...restProps}){
     return (
         <Buttons {...restProps}>
@@ -68,7 +72,7 @@ Header.Logout = function HeaderLogout({ childern, ...restProps}){
         </Buttons>
     )
 }
-
+*/
 Header.Dropdown = function HeaderDropdown({ childern, ...restProps}){
     return (
         <Dropdown>Dropdown Button Here</Dropdown>

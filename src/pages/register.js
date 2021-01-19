@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import firebase from 'firebase';
+import { HeaderContainer } from '../container/header';
+import { FooterContainer } from "../container/footer";
 import { useHistory, Link } from 'react-router-dom';
 
-import { database } from '../lib/firebase';
+import { database } from '../config/firebase';
 import * as ROUTES from '../constants/routes';
 import Form from '../components/form/index';
 
@@ -39,6 +41,7 @@ const Register = () => {
 
     return (
         <>
+            <HeaderContainer />
             <Form>
                 <Form.Base method='POST'>
                     <Form.Title>Register</Form.Title>
@@ -91,6 +94,7 @@ const Register = () => {
                     </Form.Alt>
                 </Form.Base>
             </Form>
+            <FooterContainer/>
         </>
     )
 }

@@ -6,6 +6,11 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding-bottom: 2.5rem;
 `;
 
 export const Base = styled.form`
