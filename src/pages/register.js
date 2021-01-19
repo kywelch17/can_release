@@ -43,6 +43,14 @@ const Register = () => {
                 <Form.Base method='POST'>
                     <Form.Title>Register</Form.Title>
                     { error && <Form.Error></Form.Error>}
+                    <Form.User
+                        name='user'
+                        id='user'
+                    >
+                        <option value='brewery'>Brewery</option>
+                        <option value='brewery'>Personal</option>
+                        <option value='brewery'>Resale</option>
+                    </Form.User>
                     <Form.Label>Name</Form.Label>
                     <Form.Input
                         type='text'
@@ -59,7 +67,7 @@ const Register = () => {
                         id='email'
                         placeholder="bwayne@gotham.com"
                     />
-                    <Form.Label class="after">Password</Form.Label>
+                    <Form.Label>Password</Form.Label>
                     <Form.Input
                         type='password'
                         value={password}

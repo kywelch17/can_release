@@ -25,17 +25,26 @@ export const Base = styled.form`
 export const Title = styled.span`
     font-size: 36px;
     font-weight: bold;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
 
     @media (max-width: 796px) {
         font-size: 24px;
     }
 `;
 
+export const User = styled.select`
+    justify-content: center;
+    margin-bottom: 15px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+`;
+
 export const Label = styled.label`
     font-size: 12px;
-    margin-bottom: 10px;
-    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-top: 10px;
 `;
 
 export const Input = styled.input`
@@ -47,10 +56,10 @@ export const Input = styled.input`
     color: #fff;
     text-align: center;
     padding-bottom: 5px;
+`;
 
-    &:focus {
-        opacity: none;
-    }
+export const Select = styled.div`
+    display: inline;
 `;
 
 export const Submit = styled.button`
