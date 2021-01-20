@@ -8,112 +8,94 @@ export const Container = styled.div`
     min-height: 100vh;
 `;
 
-export const Base = styled.form`
+export const Base = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 50px 40px;
     color: #fff;
     background-color: #000;
     border-radius: 10px;
+    box-shadow: 1px 2px 2px 1px #aa9;
+`;
 
-    @media (max-width: 796px) {
-        padding: 30px 20px;
+export const Sheet = styled.div`
+    align-items: center;
+    width: 100%;
+`;
+
+export const Post = styled.form``;
+
+export const Input = styled.input`
+    display: block;
+    margin: 25px auto;
+    outline: none;
+    border-bottom: 1px solid #aa9!important;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: #000;
+    color: #fff;
+    padding-bottom: 3px;
+    text-align: center;
+    -webkit-transition: font-size 0.7s, margin 0.7s;
+    position: inline-block;
+
+    &:focus {
+        font-size: 36px;
+        margin: 45px 0;
+        -webkit-transition: font-size 0.7s, margin 0.7s;
     }
+
+    ::placeholder {
+        color: #fff;
+        opacity: 40%;
+    }
+`;
+
+export const Select = styled.select`
+    margin: 10px auto 25px;
+    display: block;
+    padding: 0;
+    border: none;
+    position: none;
+    outline: none;
+    background-color: #000;
+    color: #fff;
+    border: .05px solid #fff;
+    text-align: center;
 `;
 
 export const Title = styled.span`
     font-size: 36px;
     font-weight: bold;
-    margin-bottom: 10px;
-
-    @media (max-width: 796px) {
-        font-size: 24px;
-    }
-`;
-
-export const User = styled.select`
-    justify-content: center;
-    margin-bottom: 15px;
-    width: 100%;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-`;
-
-export const Label = styled.label`
-    font-size: 12px;
-    margin-bottom: 5px;
-    margin-top: 10px;
-`;
-
-export const Input = styled.input`
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    outline: none;
-    background-color: transparent;
-    color: #fff;
-    text-align: center;
-    padding-bottom: 5px;
-`;
-
-export const Select = styled.div`
-    display: inline;
+    margin-bottom: 20px;
 `;
 
 export const Submit = styled.button`
-    width: 50%;
-    height: 50%;
-    margin-top: 24px;
-    border-radius: 12px;
+    background-color: #fff;
+    padding: 7px 17px;
     outline: none;
     border: none;
-    padding: 6px;
+    border-radius: 10px;
+    margin: 10px auto 25px;
+    -webkit-transition: padding 0.7s, font-size 0.7s;
 
     &:hover {
         background-color: #aa9;
         cursor: pointer;
+        padding: 14px 24px;
+        font-size: 18px;
+        -webkit-transition: padding 0.7s, font-size 0.7s;
     }
 `;
 
-export const SubmitText = styled.span`
-    font-size: 16px;
-    text-decoration: none;
+export const Alternative = styled.div`
+    align-items: center;
 `;
 
-export const Link = styled.a`
-    text-decoration: none;
-    margin-right: auto;
-`;
-
-export const Switch = styled.span`
-    font-size: 10px;
-    color: #fff;
-    lettering-spacing: 0;
-    text-decoration: none;
-    white-space: normal;
-    float: left;
-    
-    &:hover {
-        color: #aa9;
-        cursor: pointer;
-    }
-`;
-
-export const Error = styled.ul`
-    background-color: red;
-    list-style: none;
-    padding: 0 15px;
-    font-size: 12px;
-`;
-
-export const Alt = styled.div`
-    font-size: 24px;
-    justify-content: center;
-`;
-
-export const AltText = styled.div`
+export const AltTitle = styled.div`
     font-size: 18px;    
     margin: 18px;
 `;
@@ -122,9 +104,12 @@ export const AltIcon = styled.i`
     margin: 12px 8px;
     font-size: 36px;
     color: #fff;
+    -webkit-transition: font-size 0.7s;
+    width: 100%;
 
     &:hover {
         color: #aa9;
-        cursor: pointer;
+        font-size: 52px;
+        -webkit-transition: font-size 0.7s;
     }
 `;

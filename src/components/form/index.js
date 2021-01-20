@@ -1,68 +1,46 @@
 import React from 'react';
 import { FaGoogle, FaFacebook } from 'react-icons/fa';
 
-import { Container, Base, Title, User, Label, Input, Select, Submit, SubmitText, Switch, Link, Error, Alt, AltText, AltIcon } from './styles/form';
+import { Container, Base, Title, Sheet, Input, Select, Post, Submit, Alternative, AltTitle, AltIcon } from './styles/form';
 
 export default function Form ({ children, ...restProps }) {
     return <Container {...restProps}>{ children }</Container>;
 }
 
 Form.Base = function FormBase ({ children, ...restProps }) {
-    return <Base {...restProps}>{ children }</Base>
+    return <Base {...restProps}>{ children }</Base>;
+}
+
+Form.Sheet = function FormSheet ({ children, ...restProps }) {
+    return <Sheet {...restProps}>{ children }</Sheet>;
 }
 
 Form.Title = function FormTitle ({ children, ...restProps }) {
-    return <Title {...restProps}>{ children }</Title>
-}
-
-Form.User = function FormUser ({ children, ...restProps }) {
-    return <User {...restProps}>{ children }</User>;
-}
-
-Form.Label = function FormLabel ({ children, ...restProps }) {
-    return <Label {...restProps}>{ children }</Label>
+    return <Title {...restProps}>{ children }</Title>;
 }
 
 Form.Input = function FormInput ({ children, ...restProps }) {
-    return <Input {...restProps}>{ children }</Input>
+    return <Input  {...restProps}>{ children }</Input>;
 }
 
 Form.Select = function FormSelect ({ children, ...restProps }) {
-    console.log(restProps);
     return <Select {...restProps}>{ children }</Select>;
 }
 
-Form.Switch = function FormSwitch ({ children, ...restProps }) {
-    return (
-        <>
-            {restProps.id === 'register' && 
-                <Link href={'/login'}>
-                    <Switch {...restProps}>{children}</Switch>
-                </Link>
-            }
-            {restProps.id === 'login' && 
-                <Link href={'register'}>
-                    <Switch {...restProps}>{children}</Switch>
-                </Link>
-            }
-        </>
-    );
+Form.Post = function FormPost ({ children, ...restProps }) {
+    return <Post {...restProps}>{ children }</Post>;
 }
 
 Form.Submit = function FormSubmit ({ children, ...restProps }) {
-    return (<Submit {...restProps}><SubmitText>{ children }</SubmitText></Submit>);
+    return <Submit {...restProps}>{ children }</Submit>;
 }
 
-Form.Error = function FormError ({ children, ...restProps }) {
-    return <Error {...restProps}>{ children }</Error>;
+Form.Alternative = function FormAlternative ({ children, ...restProps }) {
+    return <Alternative {...restProps}>{ children }</Alternative>;
 }
 
-Form.Alt = function FormAlt ({ children, ...restProps }) {
-    return <Alt {...restProps}>{ children }</Alt>;
-}
-
-Form.AltText = function FormAltText ({ children, ...restProps }) {
-    return <AltText {...restProps}>{ children }</AltText>;
+Form.AltTitle = function FormAltTitle ({ children, ...restProps }) {
+    return <AltTitle {...restProps}>{ children }</AltTitle>;
 }
 
 Form.AltIcon = function FormAltIcon ({ children, ...restProps }) {
@@ -71,5 +49,5 @@ Form.AltIcon = function FormAltIcon ({ children, ...restProps }) {
             {restProps.id === 'facebook' && <AltIcon><FaFacebook /></AltIcon>}
             {restProps.id === 'google' && <AltIcon><FaGoogle /></AltIcon>}
         </>
-    );
+    )
 }
