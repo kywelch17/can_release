@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaGoogle, FaFacebook } from 'react-icons/fa';
 
-import { Container, Base, Title, Sheet, Input, Select, Submit, Alternative, AltTitle, AltIcon } from './styles/form';
+import { Container, Base, Title, Sheet, Input, Select, Option, Submit, Alternative, AltTitle, AltIcon } from './styles/form';
 
 export default function Form ({ children, ...restProps }) {
     return <Container {...restProps}>{ children }</Container>;

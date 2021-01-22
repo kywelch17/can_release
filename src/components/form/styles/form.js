@@ -7,7 +7,7 @@ export const Container = styled.div`
     justify-content: center;
     min-height: 100vh;
     position: fixed;
-    top: 50%;
+    top: 57%;
     left: 50%;
     transform: translate(-50%,-50%);
     padding-bottom: 2.5rem;
