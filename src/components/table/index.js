@@ -17,7 +17,7 @@ Table.Tab = function TableTab({ children, ...restProps }) {
             <Tr>
                 <Td>Miller</Td>
                 <Td>Miller</Td>
-                <Td>Light</Td>
+                <Td>Light</Td> 
             </Tr>
             <Tr>
                 <Td>Lafayette</Td>

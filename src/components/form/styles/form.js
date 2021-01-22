@@ -95,7 +95,7 @@ export const Link = styled.a`
 export const Switch = styled.span`
     font-size: 10px;
     color: #fff;
-    lettering-spacing: 0;
+    letter-spacing: 0;
     text-decoration: none;
     white-space: normal;
     float: left;

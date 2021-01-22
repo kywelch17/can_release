@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 export const Container = styled.div`
     display: grid;
     grid-template-columns: 2fr 3fr 1fr 1fr;
+    position:relative;
     padding: 16px 24px;
     line-height: 1.5;
     color: #000;
@@ -77,7 +78,7 @@ export const Submit = styled.button`
     }
 `;
 
-export const buttonArea = styled.div`
+export const ButtonArea = styled.div`
     grid-column-start: 3;
     grid-column-end: 3;
     justify-content: center;

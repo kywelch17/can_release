@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Dropdown, TitleLink, TitleLinkText, Items, Search, Input, Submit, Buttons, buttonArea } from './styles/header';
+import { Container, Dropdown, TitleLink, TitleLinkText, Items, Search, Input, Submit, Buttons, ButtonArea } from './styles/header';
 import { useHistory } from 'react-router-dom';
 
 export default function Header({ children, ...restProps }) {
@@ -42,7 +42,7 @@ Header.Login = function HeaderLogin({ childern, ...restProps}){
     let history = useHistory();
 
     return (
-        <buttonArea>
+        <ButtonArea>
             <Buttons {...restProps} onClick={() => history.push('/login')}>
                 Login
             </Buttons>
@@ -52,7 +52,7 @@ Header.Login = function HeaderLogin({ childern, ...restProps}){
             <Buttons {...restProps}>
                 Logout
             </Buttons>
-        </buttonArea>
+        </ButtonArea>
     )
 }
 
