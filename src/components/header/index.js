@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Container, TitleLink, TitleLinkText, Items, Search, Input, Submit } from './style/header';
+import { Container, Dropdown, TitleLink, TitleLinkText, Items, Search, Input, Submit, Buttons, ButtonArea } from './styles/header';
+import { useHistory } from 'react-router-dom';
 
 export default function Header({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>;
@@ -34,5 +35,46 @@ Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...restProps 
                 Search
             </Submit>
         </Search>
+    )
+}
+
+Header.Login = function HeaderLogin({ childern, ...restProps}){
+    let history = useHistory();
+
+    return (
+        <ButtonArea>
+            <Buttons {...restProps} onClick={() => history.push('/login')}>
+                Login
+            </Buttons>
+            <Buttons {...restProps} onClick={() => history.push('/register')}>
+                Register
+            </Buttons>
+            <Buttons {...restProps}>
+                Logout
+            </Buttons>
+        </ButtonArea>
+    )
+}
+
+/*
+Header.Register = function HeaderRegister({ childern, ...restProps}){
+    return (
+        <Buttons {...restProps}>
+            Register
+        </Buttons>
+    )
+}
+
+Header.Logout = function HeaderLogout({ childern, ...restProps}){
+    return (
+        <Buttons {...restProps}>
+            Logout
+        </Buttons>
+    )
+}
+*/
+Header.Dropdown = function HeaderDropdown({ childern, ...restProps}){
+    return (
+        <Dropdown>Dropdown Button Here</Dropdown>
     )
 }

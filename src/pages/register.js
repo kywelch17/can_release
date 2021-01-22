@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import firebase from 'firebase';
+import { HeaderContainer } from '../container/header';
+import { FooterContainer } from "../container/footer";
 import { useHistory, Link } from 'react-router-dom';
-import { Cookies} from 'react-cookie';
 
 import { database } from '../config/firebase';
-import { registerErrors } from '../helper/error';
 import * as ROUTES from '../constants/routes';
 import Form from '../components/form/index';
 
@@ -13,7 +13,7 @@ const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
+    const [passwordConfirm, setPasswordConfirm] = useState('');
     const [error, setError] = useState([]);
 
     const history = useHistory();
@@ -26,10 +26,10 @@ const Register = () => {
             name: name,
             email: email,
             password: password,
-            confirmPassword: confirmPassword
+            passwordConfirm: passwordConfirm,
+            likedBeer: []
         };
 
-        setError(registerErrors(user));
         if (error.length > 0) {
             console.log(error);
             return;
@@ -63,58 +63,63 @@ const Register = () => {
 
     return (
         <>
+            <HeaderContainer />
             <Form>
-                <Form.Base>
+                <Form.Base method='POST'>
                     <Form.Title>Register</Form.Title>
-                    <Form.Sheet>
-                        <Form.Select
-                            id='type'
-                            value={type}
-                            onChange={({ target }) => setType(target.value)}
-                        >
-                            <option value='brewery'>Brewery</option>
-                            <option value='resale'>Resale</option>
-                            <option value='personal'>Personal</option>
-                        </Form.Select>
-                        <Form.Input 
-                            id='name'
-                            type='text'
-                            value={name}
-                            onChange={({ target }) => setName(target.value)}
-                            placeholder='Name'
-                        />
-                        <Form.Input 
-                            id='email'
-                            type='email'
-                            value={email}
-                            onChange={({ target }) => setEmail(target.value)}
-                            placeholder='Email Address'
-                        />
-                        <Form.Input 
-                            id='password'
-                            type='password'
-                            value={password}
-                            onChange={({ target }) => setPassword(target.value)}
-                            placeholder='Password'
-                        />
-                        <Form.Input 
-                            id='confirmPassword'
-                            type='password'
-                            value={confirmPassword}
-                            onChange={({ target }) => setConfirmPassword(target.value)}
-                            placeholder='Password Confirm'
-                        />
-                    </Form.Sheet>
-                    <Form.Submit onClick={handleRegister}>Submit</Form.Submit>
+                    <Form.Select
+                        value={type}
+                        id='type'
+                        onChange={({ target }) => setType(target.value)}
+                    >
+                        <option value='brewery'>Brewery</option>
+                        <option value='resale'>Resale</option>
+                        <option value='personal'>Personal</option>
+                    </Form.Select>
+                    <Form.Input
+                        type='text'
+                        value={name}
+                        onChange={({ target }) => setName(target.value)}
+                        id='name'
+                        placeholder="Name"
+                    />
+                    <Form.Input
+                        type='email'
+                        value={email}
+                        onChange={({ target }) => setEmail(target.value)}
+                        id='email'
+                        placeholder="Email"
+                    />
+                    <Form.Input
+                        type='password'
+                        value={password}
+                        onChange={({ target }) => setPassword(target.value)}
+                        id='password'
+                        placeholder="Password"
+                    />
+                    <Form.Input
+                        type='password'
+                        value={passwordConfirm}
+                        onChange={({ target }) => setPasswordConfirm(target.value)}
+                        id='passwordConfirm'
+                        placeholder="Confirm Password"
+                    />
+                    <Form.Submit
+                        type='submit'
+                        onClick={handleRegister}
+                    >Submit</Form.Submit>
+                    <Form.AltTitle>Register with:</Form.AltTitle>
                     <Form.Alternative>
-                        <Form.AltTitle>Register with:</Form.AltTitle>
-                        <div>
+                        <a href='https://facebook.com'>
                             <Form.AltIcon id='facebook' />
+                        </a>
+                        <a href='https://google.com'>
                             <Form.AltIcon id='google' />
-                        </div>
+                        </a>
                     </Form.Alternative>
                 </Form.Base>
             </Form>
+            <FooterContainer/>
         </>
     )
 }

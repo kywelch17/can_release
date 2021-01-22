@@ -2,6 +2,12 @@
 /src/config/config.js
 .eslintcache
 
+#Creds
+/config/config.js
+
+#cache
+.eslintcache
+
 # dependencies
 /node_modules
 /.pnp

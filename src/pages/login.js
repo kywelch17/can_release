@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { HeaderContainer } from '../container/header';
+import { FooterContainer } from '../container/footer';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 
-import { database } from '../lib/firebase';
+import { database } from '../config/firebase';
 import Form from '../components/form';
 
 const Login = () => {
@@ -27,11 +29,10 @@ const Login = () => {
 
     return (
         <>
+            <HeaderContainer />
             <Form>
                 <Form.Base method='POST'>
                     <Form.Title>Login</Form.Title>
-                    { error && <Form.Error></Form.Error>}
-                    <Form.Label>Email Address</Form.Label>
                     <Form.Input
                         type='email'
                         value={email}
@@ -39,7 +40,6 @@ const Login = () => {
                         id='email'
                         placeholder="bwayne@gotham.com"
                     />
-                    <Form.Label class="after">Password</Form.Label>
                     <Form.Input
                         type='password'
                         value={password}
@@ -47,22 +47,23 @@ const Login = () => {
                         id='password'
                         placeholder="Batcave1232$"
                     />
-                    <Form.Switch id='login'>Need an account?</Form.Switch>
+                    
                     <Form.Submit
                         type='submit'
                         onClick={handleLogin}
                     >Submit</Form.Submit>
-                    <Form.AltText>Login with:</Form.AltText>
-                    <Form.Alt>
+                    <Form.AltTitle>Login with:</Form.AltTitle>
+                    <Form.Alternative>
                         <a href='https://facebook.com'>
                             <Form.AltIcon id='facebook' />
                         </a>
                         <a href='https://google.com'>
                             <Form.AltIcon id='google' />
                         </a>
-                    </Form.Alt>
+                    </Form.Alternative>
                 </Form.Base>
             </Form>
+            <FooterContainer/>
         </>
     )
 }

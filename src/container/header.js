@@ -10,6 +10,10 @@ export function HeaderContainer({ children }) {
             <Header.Items>
                 <Header.Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             </Header.Items>
+            <Header.Login/>
+            <Header.Dropdown/>
+           
+            
        </Header>
     )
 }

@@ -6,9 +6,14 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding-bottom: 2.5rem;
 `;
 
-export const Base = styled.div`
+export const Base = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +30,6 @@ export const Sheet = styled.div`
     width: 100%;
 `;
 
-export const Post = styled.form``;
 
 export const Input = styled.input`
     display: block;
@@ -42,15 +46,17 @@ export const Input = styled.input`
     -webkit-transition: font-size 0.7s, margin 0.7s;
     position: inline-block;
 
-    &:focus {
-        font-size: 36px;
-        margin: 45px 0;
-        -webkit-transition: font-size 0.7s, margin 0.7s;
-    }
-
-    ::placeholder {
-        color: #fff;
-        opacity: 40%;
+    @media (min-width: 768px) {
+        &:focus {
+            font-size: 36px;
+            margin: 45px 0;
+            -webkit-transition: font-size 0.7s, margin 0.7s;
+        }
+    
+        ::placeholder {
+            color: #fff;
+            opacity: 40%;
+        }
     }
 `;
 
