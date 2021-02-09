@@ -9,12 +9,10 @@ const Landing = () => {
 
     return (
         <>
-            
             <HeaderContainer />
             <TableContainer />
             <CalendarContainer />
             <FooterContainer />
-            
         </>
     );
 }

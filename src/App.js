@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
         position:relative;
         min-height:100vh;
         padding-bottom:2.5rem;
+        background-color: #E8DDB5
     }
 `;
 

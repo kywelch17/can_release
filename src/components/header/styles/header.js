@@ -8,6 +8,7 @@ export const Container = styled.div`
     line-height: 1.5;
     color: #000;
     border-bottom: 2px solid #000;
+    background-color: #EE6c4d;
 
     a {
         color: #000;
@@ -52,7 +53,7 @@ export const Search = styled.div`
 export const Input = styled.input`
     outline: none;
     text-align: center;   
-    background-color: inherit;
+    background-color: #E94F37;
     color: inherit;
     border: 1.5px solid #000;
     border-radius: 10px;
@@ -63,7 +64,7 @@ export const Input = styled.input`
 
 export const Submit = styled.button`
     outline: none;
-    background-color: inherit;
+    background-color: #E94F37;
     color: #000;
     border: 1.5px solid #000;
     border-radius: 10px;
@@ -94,7 +95,7 @@ export const Buttons = styled.button`
         justify-content: center;
         align-items: center;
         outline: none;
-        background-color: inherit;
+        background-color: #E94F37;
         color: #000;
         border: 1.5px solid #000;
         border-radius: 10px;
@@ -121,7 +122,7 @@ export const Dropdown = styled.div`
     align-items: center;
     align-content: center;
     outline: none;
-    background-color: inherit;
+    background-color: #E94F37;
     color: #000;
     border: 1.5px solid #000;
     border-radius: 10px;
